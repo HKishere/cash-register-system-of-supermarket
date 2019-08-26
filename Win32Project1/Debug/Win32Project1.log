@@ -1,0 +1,4 @@
+﻿  login.cpp
+g:\desktop\githubcode&vs_code\c\win32project1\duilib\core\uimanager.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
+  Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\Debug\Win32Project1.exe
+  Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\Debug\Win32Project1.pdb (Full PDB)

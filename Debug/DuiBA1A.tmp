@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="843,488">
+    <Container width="843" height="488">
+        <TileLayout width="843" height="197" bkimage="file=&apos;20178883539764860_224.jpg&apos; source=&apos;800,200,1700,800&apos; corner=&apos;0,0,0,10&apos;">
+            <Control bordersize="2" float="true" pos="452,102,0,0" width="328" height="325" bkcolor="#FFFFFBF0" bordercolor="#00A700C0" />
+            <Container width="844" height="57" bkimage="图片1.png" />
+            <Edit text="用户名" float="true" pos="543,197,0,0" width="180" height="32" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit float="true" pos="543,240,0,0" width="180" height="32" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Button float="true" pos="588,297,0,0" width="76" height="44" bkimage="logoin.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="logoin_hover.png" pushedimage="logoin_cilck.png" />
+            <Button float="true" pos="780,0,0,0" width="63" height="40" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="close_normal.png" hotimage="close_hover.png" pushedimage="close_click.png" />
+            <Button float="true" pos="717,0,0,0" width="63" height="40" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="minnest_normal.png" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
+            <Control float="true" pos="504,196,0,0" width="233" height="34" bkimage="username.png" />
+            <Control text="密码" float="true" pos="504,239,0,0" width="233" height="34" bkimage="password.png" />
+        </TileLayout>
+    </Container>
+</Window>

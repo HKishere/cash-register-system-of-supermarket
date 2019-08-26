@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1180,800" caption="0,0,0,32">
+    <VerticalLayout width="1180" height="800" bkimage="mianBG.png">
+        <Button float="true" pos="1118,0,0,0" width="62" height="40" bkimage="close_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="close_hover.png" pushedimage="close_click.png" />
+        <Button float="true" pos="1056,0,0,0" width="62" height="40" bkimage="minnest_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
+        <Option float="true" pos="61,69,0,0" width="149" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="员工管理_hover.png" pushedimage="员工管理_cilck.png" />
+        <Option float="true" pos="216,69,0,0" width="149" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" pushedimage="商品管理_cilck.png" />
+        <Option float="true" pos="371,69,0,0" width="149" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" pushedimage="收银管理_cilck.png" />
+        <Option float="true" pos="526,69,0,0" width="149" height="63" bkimage="会员管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="会员管理_hover.png" selectedimage="会员管理_cilck.png" />
+    </VerticalLayout>
+</Window>
