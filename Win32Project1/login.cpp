@@ -9,21 +9,21 @@ CDuiString LogoinWindow::GetSkinFile() {
 LPCTSTR LogoinWindow::GetWindowClassName(void)const {
 	return _T("loginwindows");
 }
-void LogoinWindow::Notify(TNotifyUI& msg) {
+void LogoinWindow::Notify(TNotifyUI& msg) {//捕获duilib消息
 
 	if (msg.sType == _T("click")){
 		if (msg.pSender->GetName() == _T("closebtn")){
 			PostQuitMessage(0);
 		}
-		/*else if (msg.pSender->GetName() == _T("minbtn")){
+		else if (msg.pSender->GetName() == _T("minbtn")){
 			SendMessage(WM_SYSCOMMAND, SW_MINIMIZE);
-		}*/
+		}
 		else if (msg.pSender->GetName() == _T("loginbtn")){
 			login();
 		}
 	}
 
-}//捕获duilib消息
+}
 
 void LogoinWindow::login(){
 	CEditUI* p_edit_user_name = (CEditUI*)m_PaintManager.FindControl(_T("username_Edit"));
@@ -42,7 +42,7 @@ void LogoinWindow::login(){
 			return;
 		}
 		else {
-			//ShowWindow(false);
+			ShowWindow(false);
 		}
 	}
 
