@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1180,800" caption="0,0,0,32">
+    <VerticalLayout width="1180" height="800" bkimage="mianBG.png">
+        <Button name="closebtn_main" float="true" pos="1118,0,0,0" width="62" height="40" bkimage="close_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="close_hover.png" pushedimage="close_click.png" />
+        <Button name="minbtn_main" float="true" pos="1056,0,0,0" width="62" height="40" bkimage="minnest_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
+        <Option name="employee" float="true" pos="968,243,0,0" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selected="true" selectedimage="员工管理_cilck.png" />
+        <TabLayout name="table_layout1" float="true" pos="30,197,0,0" width="880" height="564">
+            <List width="880" height="564" bkcolor="#FFFFFBF0" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+                <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                    <ListHeaderItem text="ID" width="40" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="姓名" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="性别" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="生日" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="密码" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="职位" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="电话" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="薪水" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                </ListHeader>
+            </List>
+        </TabLayout>
+        <Option name="goods" float="true" pos="968,364,0,0" width="184" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" group="tab" selectedimage="商品管理_cilck.png" />
+        <TabLayout name="table_layout2" float="true" pos="30,197,0,0" width="880" height="564">
+            <List width="880" height="564" bkcolor="#FFFFFBF0" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+                <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                    <ListHeaderItem text="ID" width="40" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="姓名" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="性别" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="生日" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="密码" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="职位" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="电话" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="薪水" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                </ListHeader>
+            </List>
+        </TabLayout>
+        <Option name="money" float="true" pos="968,498,0,0" width="184" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" group="tab" selectedimage="收银管理_cilck.png" />
+        <TabLayout float="true" pos="30,197,0,0" width="880" height="564">
+            <List width="880" height="564" bkcolor="#FFFFFBF0" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+                <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                    <ListHeaderItem text="ID" width="40" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="姓名" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="性别" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="生日" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="密码" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="职位" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="电话" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="薪水" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                </ListHeader>
+            </List>
+        </TabLayout>
+        <Option name="VIP" float="true" pos="968,616,0,0" width="184" height="63" bkimage="会员管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="会员管理_click.png" />
+        <TabLayout name="table_layout" float="true" pos="30,197,0,0" width="880" height="564">
+            <List width="880" height="564" bkcolor="#FFFFFBF0" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+                <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                    <ListHeaderItem text="ID" width="40" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="姓名" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="性别" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="生日" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="密码" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="职位" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="电话" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                    <ListHeaderItem text="薪水" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" />
+                </ListHeader>
+            </List>
+        </TabLayout>
+    </VerticalLayout>
+</Window>

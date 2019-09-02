@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="843,488" caption="0,0,0,32">
+        <VerticalLayout bkimage="file=&apos;20178883539764860_224.jpg&apos; source=&apos;800,200,1700,800&apos; corner=&apos;0,0,0,10&apos;">
+            <HorizontalLayout name="caption" width="844" height="57" bkimage="图片1.png" >
+				<Button name="closebtn" float="true" pos="780,0,0,0" width="63" height="40" bkimage="close_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="close_hover.png" pushedimage="close_click.png" />
+				<Button name="minbtn" float="true" pos="717,0,0,0" width="63" height="40" bkimage="minnest_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
+			</HorizontalLayout>
+			<Control bordersize="2" float="true" pos="452,102,0,0" width="328" height="325" bkcolor="#FFFFFBF0" bordercolor="#00A700C0" />
+            <Control float="true" pos="504,196,0,0" width="233" height="34" bkimage="username.png" />
+            <Control float="true" pos="504,239,0,0" width="233" height="34" bkimage="password.png" />
+            <Edit name="username_Edit" float="true" pos="543,197,0,0" width="180" height="32" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit name="password_Edit" float="true" password="true" pos="543,240,0,0" width="180" height="32" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Button name="loginbtn" float="true" pos="588,297,0,0" width="76" height="44" bkimage="logoin.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="logoin.png" hotimage="logoin_hover.png" pushedimage="logoin_cilck.png" />
+        </VerticalLayout>
+</Window>
