@@ -7,9 +7,9 @@
 		<TabLayout name="table_layout1" float="true" pos="30,144,910,761" width="880" height="617">
 			<VerticalLayout pos="0,0,880,616" width="880" height="616">
 				<VerticalLayout pos="0,0,880,38" width="880" height="38">
-					<Button name="select" pos="814,7,857,28" width="43" height="21" text="查询" float="true" font="4" textcolor="0xFFFFFFFF" />
+					<Button name="select" pos="788,5,853,32" bkimage="button_nromal1.png" width="65" height="27" text="查询" float="true" font="4" textcolor="0xFF000000" />
 				</VerticalLayout>
-				<List name="employeelist" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" bordersize="2" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
+				<List name="employeelist" padding="2,0,0,0" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" bordersize="2" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
 					<ListHeader name="domain" padding="2,0,0,0" bordercolor="0xFFA0A0A4" bordersize="2" border="20202020">
 						<ListHeaderItem pos="0,0,50,0" text="ID" width="50" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
 						<ListHeaderItem pos="0,0,100,0" text="姓名" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
@@ -22,12 +22,16 @@
 					</ListHeader>
 				</List>
 				<HorizontalLayout pos="0,0,880,64" padding="0,-3,0,0" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="64">
-					<Edit pos="44,16,180,47" bordercolor="0xFFA0A0A4" bordersize="2" width="136" height="31" float="true" />
-					<Label name="姓名" pos="10,23,55,42" width="45" height="19" text="姓名" float="true" />
-					<Combo pos="202,16,279,48" bkcolor="0xFFFFFFFF" bordercolor="0xFFA0A0A4" colorhsl="true" bordersize="2" width="77" height="32" float="true">
-						<ListLabelElement text="男" selected="true" />
-                		<ListLabelElement text="女" />
+					<Edit pos="19,16,144,47" bordercolor="0xFFA0A0A4" bordersize="2" width="125" height="31" text="姓名" float="true" />
+					<Combo name="combox" pos="149,16,236,47" bkcolor="0xFFFFFFFF" bordercolor="0xFFA0A0A4" colorhsl="true" bordersize="2" bkimage="combolist.png" width="87" height="31" text="性别" float="true" textpadding="10,0,0,0">
+						<ListLabelElement text="男" />
+						<ListLabelElement text="女" />
 					</Combo>
+					<Edit pos="240,16,327,47" bordercolor="0xFFA0A0A4" bordersize="2" width="87" height="31" text="生日" float="true" textpadding="5,0,0,0" />
+					<Edit pos="331,16,442,47" bordercolor="0xFFA0A0A4" bordersize="2" width="111" height="31" text="密码" float="true" />
+					<Combo pos="445,16,536,47" bkcolor="0xFFFFFFFF" bordercolor="0xFFA0A0A4" bordersize="2" bkimage="combolist.png" width="91" height="31" float="true" itembkimage="combolist.png" />
+					<Edit pos="540,16,697,47" bordercolor="0xFFA0A0A4" bordersize="2" width="157" height="31" text="电话" float="true" />
+					<Edit pos="705,16,856,47" bordercolor="0xFFA0A0A4" bordersize="2" width="151" height="31" text="薪水" float="true" />
 				</HorizontalLayout>
 			</VerticalLayout>
 			<VerticalLayout width="880" height="564" bkcolor="#FFC5D4F2">
