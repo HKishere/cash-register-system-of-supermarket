@@ -1,4 +1,5 @@
 ﻿#include "Ksql.h"
+#include <string.h>
 #include <iostream>
 using namespace std;
 
@@ -75,6 +76,27 @@ bool Ksql::Updata(const string& strSQL) {
 	}
 	else
 		return true;
+}
+bool Ksql::CheckPasswords(CDuiString& username,CDuiString& password) {
+	string strSQL("select password from employee where name='");
+	strSQL += (const char*)username.GetData();
+	strSQL += "';";
+	if (mysql_query(_mysql, strSQL.c_str())){//通过mysql_query函数执行SQL语句
+		MessageBox(m_hWnd, _T("数据库查询失败!"), _T("登录失败!"), MB_OK);
+		return false;
+	}
+	MYSQL_RES* MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
+	MYSQL_ROW MysqlRow;
+	MysqlRow = mysql_fetch_row(MysqlRes);
+	if (!(MysqlRow)){
+		MessageBox(m_hWnd, _T("找不到用户名!"), _T("登录失败!"), MB_OK);
+		return false;
+	}
+	if (strcmp(*MysqlRow , password.GetData())){
+		password = "";
+		return false;
+	}
+	return true;
 }
 
 

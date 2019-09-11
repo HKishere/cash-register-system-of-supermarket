@@ -6,9 +6,6 @@
 		<Option name="employee" float="true" pos="961,282,1145,345" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="员工管理_cilck.png" selected="true" />
 		<TabLayout name="table_layout1" float="true" pos="30,144,910,761" width="880" height="617">
 			<VerticalLayout pos="0,0,880,616" width="880" height="616">
-				<VerticalLayout pos="0,0,880,38" width="880" height="38">
-					<Button name="select" pos="788,5,853,32" bkimage="button_nromal1.png" width="65" height="27" text="查询" float="true" font="4" textcolor="0xFF000000" />
-				</VerticalLayout>
 				<List name="employeelist" padding="2,0,0,0" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" bordersize="2" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
 					<ListHeader name="domain" padding="2,0,0,0" bordercolor="0xFFA0A0A4" bordersize="2" border="20202020">
 						<ListHeaderItem pos="0,0,50,0" text="ID" width="50" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
@@ -21,7 +18,7 @@
 						<ListHeaderItem pos="0,0,178,0" text="薪水" width="178" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
 					</ListHeader>
 				</List>
-				<HorizontalLayout pos="0,0,880,64" padding="0,-3,0,0" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="64">
+				<HorizontalLayout pos="0,0,880,64" padding="2,3,0,0" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="64">
 					<Edit pos="19,16,144,47" bordercolor="0xFFA0A0A4" bordersize="2" width="125" height="31" text="姓名" float="true" />
 					<Combo name="combox" pos="149,16,236,47" bkcolor="0xFFFFFFFF" bordercolor="0xFFA0A0A4" colorhsl="true" bordersize="2" bkimage="combolist.png" width="87" height="31" text="性别" float="true" textpadding="10,0,0,0">
 						<ListLabelElement text="男" />
@@ -33,6 +30,13 @@
 					<Edit pos="540,16,697,47" bordercolor="0xFFA0A0A4" bordersize="2" width="157" height="31" text="电话" float="true" />
 					<Edit pos="705,16,856,47" bordercolor="0xFFA0A0A4" bordersize="2" width="151" height="31" text="薪水" float="true" />
 				</HorizontalLayout>
+				<VerticalLayout pos="0,0,880,38" width="880" height="38">
+					<Button name="select" pos="4,8,129,35" bkimage="button_nromal1.png" width="125" height="27" text="查询" float="true" font="4" textcolor="0xFF000000" />
+					<Button pos="250,8,375,35" bkimage="button_nromal1.png" width="125" height="27" text="新增" float="true" pushedimage="button_down1.png" />
+					<Button pos="487,8,612,35" bkimage="button_nromal1.png" width="125" height="27" text="删除" float="true" pushedimage="button_down1.png" />
+					<Button pos="753,6,878,35" width="125" height="29" float="true" />
+					<Button pos="753,8,878,35" bkimage="button_nromal1.png" width="125" height="27" text="修改" float="true" pushedimage="button_down1.png" />
+				</VerticalLayout>
 			</VerticalLayout>
 			<VerticalLayout width="880" height="564" bkcolor="#FFC5D4F2">
 				<Label text="Option1" bkcolor="#FFC5D4F2" align="center" />
@@ -44,8 +48,7 @@
 				<Text text="Option3" bkcolor="#FFBECEA1" align="center" />
 			</VerticalLayout>
 		</TabLayout>
-		<Option name="goods" float="true" pos="963,384,1147,447" width="184" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" group="tab" selectedimage="商品管理_cilck.png" />
-		<Option name="money" float="true" pos="968,498,0,0" width="184" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" group="tab" selectedimage="收银管理_cilck.png" />
-		<Option name="VIP" float="true" pos="968,616,0,0" width="184" height="63" bkimage="会员管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="会员管理_click.png" />
+		<Option name="goods" float="true" pos="963,426,1147,489" width="184" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" group="tab" selectedimage="商品管理_cilck.png" />
+		<Option name="money" float="true" pos="968,576,1152,639" width="184" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" group="tab" selectedimage="收银管理_cilck.png" />
 	</VerticalLayout>
 </Window>

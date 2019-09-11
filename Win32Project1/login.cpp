@@ -1,3 +1,4 @@
+#include "Ksql.h"
 #include "login.h"
 #include "mainwindow.h"
 CDuiString LogoinWindow::GetSkinFolder() {
@@ -42,12 +43,23 @@ void LogoinWindow::login(){
 			return;
 		}
 		else {
-			ShowWindow(false);
+			Ksql mysql_login;
+			mysql_login.ConnectMySQL("localhost", "root", "kishere", "shop");
+			if (mysql_login.CheckPasswords(str_user_name, str_password)) {
+				MainWnd mainwindows;
+				mainwindows.Create(NULL, _T("mainwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+				mainwindows.CenterWindow();
+				mainwindows.ShowModal();
+				ShowWindow(false);
+				return;
+			}
+			else{
+				if (str_password == "") {
+					MessageBox(m_hWnd, _T("ÃÜÂë´íÎó!"), _T("µÇÂ¼Ê§°Ü!"), MB_OK);
+					return;
+				}
+				return;
+			}
 		}
 	}
-
-    MainWnd mainwindows;
-    mainwindows.Create(NULL, _T("mainwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
-	mainwindows.CenterWindow();
-    mainwindows.ShowModal();
 }

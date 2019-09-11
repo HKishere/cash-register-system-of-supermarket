@@ -36,8 +36,5 @@ void MainWnd::Notify(TNotifyUI& msg) {
 		else if (msg.pSender->GetName() == _T("money")) {
 			ptab->SelectItem(2);
 		}
-		else if (msg.pSender->GetName() == _T("VIP")) {
-			ptab->SelectItem(3);
-		}
 	}
 }

@@ -17,6 +17,7 @@ public:
 	bool Insert(const string& strSQL);
 	bool Delete(const string& strSQL);
 	bool Updata(const string& strSQL);
+	bool CheckPasswords(CDuiString& username, CDuiString& password);
 private:
 	MYSQL* _mysql;//数据库连接句柄
 };
