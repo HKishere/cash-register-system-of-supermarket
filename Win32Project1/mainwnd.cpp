@@ -1,5 +1,13 @@
+#include "selectwin.h"
 #include "mainwindow.h"
 #include "Ksql.h"
+
+DuiLib::CListUI* _pList;
+
+
+MainWnd::MainWnd() {
+	_sql = "select * from employee;";
+}
 CDuiString MainWnd::GetSkinFolder() {
 	return _T("");
 }
@@ -7,7 +15,7 @@ CDuiString MainWnd::GetSkinFile() {
 	return _T("mainstyle.xml");
 }
 LPCTSTR MainWnd::GetWindowClassName(void)const {
-	return _T("mainwindows");
+	return _T("mainwindow");
 }
 void MainWnd::Notify(TNotifyUI& msg) {
 
@@ -19,10 +27,15 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			SendMessage(WM_SYSCOMMAND, SW_MINIMIZE);
 		}
 		else if(msg.pSender->GetName()==_T("select")){
-			DuiLib::CListUI* pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
-			Ksql mysql;
-			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
-			mysql.Select("select * from employee;",pList);
+			 _pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
+			ShowResult();
+		}
+		else if(msg.pSender->GetName()==_T("conditionselect")){
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
+			SelectWin sw;
+			sw.Create(NULL, _T("selectwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			sw.CenterWindow();
+			sw.ShowModal();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){
@@ -37,4 +50,9 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			ptab->SelectItem(2);
 		}
 	}
+}
+void MainWnd::ShowResult() {
+	Ksql mysql;
+	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
+	mysql.Select(_sql.c_str(), _pList);
 }

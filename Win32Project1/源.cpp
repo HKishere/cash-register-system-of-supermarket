@@ -32,7 +32,7 @@
 //		}
 //
 //		 以下3个消息WM_NCACTIVATE、WM_NCCALCSIZE、WM_NCPAINT用于屏蔽系统标题栏
-//		/* if (uMsg == WM_NCACTIVATE)
+//		if (uMsg == WM_NCACTIVATE)
 //		{
 //			if (!::IsIconic(m_hWnd))
 //			{

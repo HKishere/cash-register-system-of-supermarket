@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Window size="450,500">
+	<Container pos="0,0,204,206" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\bg_smallwin.png" width="204" height="206">
+		<VerticalLayout pos="0,0,215,98" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\bg_smallwin.png" width="215" height="98">
+			<Edit name="ID" pos="166,54,326,94" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="name" pos="166,100,326,140" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="sex" pos="166,146,326,186" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="birth" pos="166,193,326,233" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="password" pos="166,240,326,280" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="pos" pos="166,287,326,327" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Text pos="102,112,163,139" width="61" height="27" text="姓名:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,67,167,96" width="65" height="29" text="ID:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,159,166,189" width="64" height="30" text="性别:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,205,164,233" width="62" height="28" text="生日:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,252,167,282" width="65" height="30" text="密码:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,298,169,329" width="67" height="31" text="职位:" float="true" textcolor="0xFFFFFFFF" />
+			<Edit name="tel" pos="166,334,326,374" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="salary" pos="166,381,326,421" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Text pos="102,345,166,377" width="64" height="32" text="电话:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="102,391,167,422" width="65" height="31" text="薪水:" float="true" textcolor="0xFFFFFFFF" />
+			<Button name="ok" pos="124,441,214,481" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\button_nromal1.png" width="90" height="40" text="确定" float="true" textcolor="0xFF000000" />
+			<Button name="cancle" pos="250,441,340,481" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\button_nromal1.png" width="90" height="40" text="取消" float="true" textcolor="0xFF000000" />
+		</VerticalLayout>
+	</Container>
+</Window>

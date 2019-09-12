@@ -1,6 +1,5 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Win32Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Ksql.cpp
+  mainwnd.cpp
 g:\desktop\githubcode&vs_code\c\win32project1\duilib\core\uimanager.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
-g:\desktop\githubcode&vs_code\c\win32project1\win32project1\ksql.cpp(39): warning C4244: “初始化”: 从“my_ulonglong”转换到“int”，可能丢失数据
   Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\x64\Debug\ShopSystem.exe
   Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\x64\Debug\ShopSystem.pdb (Full PDB)

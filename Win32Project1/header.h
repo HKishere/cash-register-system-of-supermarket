@@ -1,5 +1,5 @@
 #pragma once
-
+#define WM_USER_SELECT_FINISH WM_USER + 2 //É¸Ñ¡Ìõ¼þ
 #include <windows.h>
 #include <UIlib.h>
 using namespace DuiLib;

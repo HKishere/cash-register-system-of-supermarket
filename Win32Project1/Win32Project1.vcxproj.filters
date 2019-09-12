@@ -30,6 +30,9 @@
     <ClCompile Include="Ksql.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="selectwin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Ksql.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="selectwin.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
