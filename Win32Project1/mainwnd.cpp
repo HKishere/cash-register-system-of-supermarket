@@ -1,4 +1,5 @@
 #include "selectwin.h"
+#include "insertwin.h"
 #include "mainwindow.h"
 #include "Ksql.h"
 
@@ -36,6 +37,12 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			sw.Create(NULL, _T("selectwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			sw.CenterWindow();
 			sw.ShowModal();
+		}
+		else if(msg.pSender->GetName()==_T("insert")){
+			InsertWin iw;
+			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			iw.CenterWindow();
+			iw.ShowModal();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){

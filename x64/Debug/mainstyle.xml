@@ -6,21 +6,23 @@
 		<Option name="employee" float="true" pos="961,282,1145,345" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="员工管理_cilck.png" selected="true" />
 		<TabLayout name="table_layout1" float="true" pos="30,144,910,761" width="880" height="617">
 			<VerticalLayout pos="0,0,880,616" width="880" height="616">
-				<List name="employeelist" padding="2,0,0,0" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" bordersize="2" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
-					<ListHeader name="domain" padding="2,0,0,0" bordercolor="0xFFA0A0A4" bordersize="2" border="20202020">
-						<ListHeaderItem pos="0,0,50,0" text="ID" width="50" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,100,0" text="姓名" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,100,0" text="性别" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,100,0" text="生日" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,100,0" text="密码" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,100,0" text="职位" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,150,0" text="电话" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-						<ListHeaderItem pos="0,0,178,0" text="薪水" width="178" textcolor="#FF000000" sepwidth="1" align="center" bkimage="bg.bmp" />
-					</ListHeader>
-				</List>
+				<VerticalLayout pos="0,0,880,459" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="459">
+					<List name="employeelist" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
+						<ListHeader name="domain" bordercolor="0xFFA0A0A4" border="20202020">
+							<ListHeaderItem pos="0,0,53,0" bordercolor="0xFFA0A0A4" bordersize="1" text="ID" width="53" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="姓名" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="性别" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="生日" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="密码" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="职位" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,150,0" bordercolor="0xFFA0A0A4" bordersize="1" text="电话" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							<ListHeaderItem pos="0,0,178,0" bordercolor="0xFFA0A0A4" bordersize="1" text="薪水" width="178" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+						</ListHeader>
+					</List>
+				</VerticalLayout>
 				<VerticalLayout pos="0,0,880,68" width="880" height="68">
 					<Button name="select" pos="4,8,129,56" bkimage="button_nromal1.png" width="125" height="48" text="查询全部" float="true" font="4" textcolor="0xFF000000" />
-					<Button pos="381,8,506,56" bkimage="button_nromal1.png" width="125" height="48" text="新增" float="true" pushedimage="button_down1.png" />
+					<Button name="insert" pos="381,8,506,56" bkimage="button_nromal1.png" width="125" height="48" text="新增" float="true" pushedimage="button_down1.png" />
 					<Button pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
 					<Button pos="753,6,878,35" width="125" height="29" float="true" />
 					<Button pos="753,8,878,56" bkimage="button_nromal1.png" width="125" height="48" text="修改" float="true" pushedimage="button_down1.png" />

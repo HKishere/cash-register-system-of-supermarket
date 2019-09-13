@@ -33,6 +33,9 @@
     <ClCompile Include="selectwin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="insertwin.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -49,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="selectwin.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="insertwin.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

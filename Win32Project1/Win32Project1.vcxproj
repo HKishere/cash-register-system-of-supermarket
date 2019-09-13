@@ -171,6 +171,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="insertwin.cpp" />
     <ClCompile Include="Ksql.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="mainwnd.cpp" />
@@ -180,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
+    <ClInclude Include="insertwin.h" />
     <ClInclude Include="Ksql.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="mainwindow.h" />

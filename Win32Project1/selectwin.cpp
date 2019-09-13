@@ -19,8 +19,8 @@ void SelectWin::Notify(TNotifyUI& msg) {//²¶»ñduilibÏûÏ¢
 		}
 		else if (msg.pSender->GetName() == _T("ok")) {
 			Condition_Select();
-			int h_wnd = 0x005B1BF0;
-	//		SendMessage(h_wnd, WM_USER_SELECT_FINISH);
+			//int h_wnd = 0x005B1BF0;
+			//SendMessage(h_wnd, WM_USER_SELECT_FINISH);
 			MainWnd::ShowResult();
 			ShowWindow(false);
 		}
