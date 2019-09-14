@@ -3,7 +3,7 @@
 	<VerticalLayout padding="0,3,0,0" width="1180" height="800" bkimage="mianBG.png">
 		<Button name="closebtn_main" float="true" pos="1118,0,0,0" width="62" height="40" bkimage="close_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="close_hover.png" pushedimage="close_click.png" />
 		<Button name="minbtn_main" float="true" pos="1056,0,0,0" width="62" height="40" bkimage="minnest_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
-		<Option name="employee" float="true" pos="961,282,1145,345" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="员工管理_cilck.png" selected="true" />
+		<Option name="employee" float="true" pos="961,218,1145,281" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="员工管理_cilck.png" selected="true" />
 		<TabLayout name="table_layout1" float="true" pos="30,144,910,761" width="880" height="617">
 			<VerticalLayout pos="0,0,880,616" width="880" height="616">
 				<VerticalLayout pos="0,0,880,459" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="459">
@@ -23,7 +23,7 @@
 				<VerticalLayout pos="0,0,880,68" width="880" height="68">
 					<Button name="select" pos="4,8,129,56" bkimage="button_nromal1.png" width="125" height="48" text="查询全部" float="true" font="4" textcolor="0xFF000000" />
 					<Button name="insert" pos="381,8,506,56" bkimage="button_nromal1.png" width="125" height="48" text="新增" float="true" pushedimage="button_down1.png" />
-					<Button pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
+					<Button name="delete" pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
 					<Button pos="753,6,878,35" width="125" height="29" float="true" />
 					<Button pos="753,8,878,56" bkimage="button_nromal1.png" width="125" height="48" text="修改" float="true" pushedimage="button_down1.png" />
 					<Button name="conditionselect" pos="192,8,317,56" bkimage="button_nromal1.png" width="125" height="48" text="筛选" float="true" pushedimage="button_down1.png" />
@@ -39,7 +39,7 @@
 				<Text text="Option3" bkcolor="#FFBECEA1" align="center" />
 			</VerticalLayout>
 		</TabLayout>
-		<Option name="goods" float="true" pos="963,426,1147,489" width="184" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" group="tab" selectedimage="商品管理_cilck.png" />
-		<Option name="money" float="true" pos="968,576,1152,639" width="184" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" group="tab" selectedimage="收银管理_cilck.png" />
+		<Option name="goods" float="true" pos="963,362,1147,425" width="184" height="63" bkimage="商品管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="商品管理_hover.png" group="tab" selectedimage="商品管理_cilck.png" />
+		<Option name="money" float="true" pos="968,512,1152,575" width="184" height="63" bkimage="收银管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="收银管理_hover.png" group="tab" selectedimage="收银管理_cilck.png" />
 	</VerticalLayout>
 </Window>

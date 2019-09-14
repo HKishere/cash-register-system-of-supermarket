@@ -29,6 +29,7 @@ void MainWnd::Notify(TNotifyUI& msg) {
 		}
 		else if(msg.pSender->GetName()==_T("select")){
 			 _pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
+			 _sql = "select * from employee;";
 			ShowResult();
 		}
 		else if(msg.pSender->GetName()==_T("conditionselect")){
@@ -43,6 +44,12 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			iw.CenterWindow();
 			iw.ShowModal();
+		}
+		else if (msg.pSender->GetName() == _T("delete")) {
+			CListTextElementUI * pListElement = new CListTextElementUI;
+			int nIndex = _pList->GetCurSel();
+			pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+			DeleteInMysql();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){
@@ -62,4 +69,50 @@ void MainWnd::ShowResult() {
 	Ksql mysql;
 	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
 	mysql.Select(_sql.c_str(), _pList);
+}
+void MainWnd::DeleteInMysql() {
+	CListTextElementUI * pListElement = new CListTextElementUI;
+	int nIndex = _pList->GetCurSel();
+	pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+
+	std::string ID = pListElement->GetText(0);
+	std::string name = pListElement->GetText(1);
+	std::string gender = pListElement->GetText(2);
+	std::string birthday = pListElement->GetText(3);
+	std::string password = pListElement->GetText(4);
+	std::string pos = pListElement->GetText(5);
+	std::string tel = pListElement->GetText(6);
+	std::string salary = pListElement->GetText(7);
+
+	std::string sql = "delete from employee where ";
+	sql += "id=";
+	sql += ID;
+	sql += " ";
+	sql += "and name='";
+	sql += name;
+	sql += "' ";
+	sql += "and gender='";
+	sql += gender;
+	sql += "' ";
+	sql += "and birthday='";
+	sql += birthday;
+	sql += "' ";
+	sql += "and password='";
+	sql += password;
+	sql += "' ";
+	sql += "and position='";
+	sql += pos;
+	sql += "' ";
+	sql += "and telphone='";
+	sql += tel;
+	sql += "' ";
+	sql += "and salary=";
+	sql += salary;
+	sql += "";
+	sql += ";";
+	Ksql mysql;
+	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
+	mysql.Delete(sql);
+	_sql = "select * from employee;";
+	ShowResult();
 }

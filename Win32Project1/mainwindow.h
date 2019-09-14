@@ -5,6 +5,7 @@
 class MainWnd :public WindowImplBase {
 public:
 	MainWnd::MainWnd();
+	void DeleteInMysql();
 	virtual void    Notify(TNotifyUI& msg);//≤∂ªÒduilibœ˚œ¢
 	virtual CDuiString GetSkinFolder();
 	virtual CDuiString GetSkinFile();
