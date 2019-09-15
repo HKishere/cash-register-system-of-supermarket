@@ -36,6 +36,9 @@
     <ClCompile Include="insertwin.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="updatewin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="insertwin.h">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="updatewin.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

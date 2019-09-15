@@ -5,7 +5,8 @@ class SelectWin :public MainWnd{
 public:
 	virtual void    Notify(TNotifyUI& msg);//≤∂ªÒduilibœ˚œ¢
 	void Condition_Select();
-private:
+private:	
+
 	virtual CDuiString GetSkinFolder();
 	virtual CDuiString GetSkinFile();
 	virtual LPCTSTR GetWindowClassName(void)const;

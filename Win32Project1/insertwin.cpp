@@ -25,6 +25,7 @@ void InsertWin::Notify(TNotifyUI& msg) {//≤∂ªÒduilibœ˚œ¢
 			Ksql mysql;
 			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
 			mysql.Insert(sql.c_str());
+			MainWnd::ShowResult();
 			ShowWindow(false);
 		}
 	}

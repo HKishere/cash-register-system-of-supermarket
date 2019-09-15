@@ -1,13 +1,13 @@
 #include "selectwin.h"
+#include "updatewin.h"
 #include "insertwin.h"
 #include "mainwindow.h"
 #include "Ksql.h"
 
-DuiLib::CListUI* _pList;
 
 
 MainWnd::MainWnd() {
-	_sql = "select * from employee;";
+	_sql = "select * from employee order by id;";
 }
 CDuiString MainWnd::GetSkinFolder() {
 	return _T("");
@@ -29,27 +29,44 @@ void MainWnd::Notify(TNotifyUI& msg) {
 		}
 		else if(msg.pSender->GetName()==_T("select")){
 			 _pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
-			 _sql = "select * from employee;";
+			 _sql = "select * from employee order by id;";
 			ShowResult();
 		}
 		else if(msg.pSender->GetName()==_T("conditionselect")){
 			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
 			SelectWin sw;
+			sw._pList = MainWnd::_pList;
 			sw.Create(NULL, _T("selectwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			sw.CenterWindow();
 			sw.ShowModal();
 		}
 		else if(msg.pSender->GetName()==_T("insert")){
 			InsertWin iw;
+			iw._pList = MainWnd::_pList;
 			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			iw.CenterWindow();
 			iw.ShowModal();
 		}
 		else if (msg.pSender->GetName() == _T("delete")) {
-			CListTextElementUI * pListElement = new CListTextElementUI;
-			int nIndex = _pList->GetCurSel();
-			pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+			if (!_pList){
+				MessageBox(m_hWnd, _T("请选择一行数据"), _T("删除失败!"), MB_OK);
+				return;
+			}
 			DeleteInMysql();
+		}
+		else if (msg.pSender->GetName() == _T("update")) {
+			if (!_pList){
+				MessageBox(m_hWnd, _T("请选择一行数据"), _T("更改失败!"), MB_OK);
+				return;
+			}
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
+			GetListInfo(text_in_list);
+			UpdateWin uw;
+			uw._pList = MainWnd::_pList;
+			uw.text_in_list = MainWnd::text_in_list;
+			uw.Create(NULL, _T("updatewin"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			uw.CenterWindow();
+			uw.ShowModal();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){
@@ -70,49 +87,53 @@ void MainWnd::ShowResult() {
 	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
 	mysql.Select(_sql.c_str(), _pList);
 }
-void MainWnd::DeleteInMysql() {
+void MainWnd::GetListInfo(ContentOfList& p) {
 	CListTextElementUI * pListElement = new CListTextElementUI;
 	int nIndex = _pList->GetCurSel();
 	pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
 
-	std::string ID = pListElement->GetText(0);
-	std::string name = pListElement->GetText(1);
-	std::string gender = pListElement->GetText(2);
-	std::string birthday = pListElement->GetText(3);
-	std::string password = pListElement->GetText(4);
-	std::string pos = pListElement->GetText(5);
-	std::string tel = pListElement->GetText(6);
-	std::string salary = pListElement->GetText(7);
+	p.ID = pListElement->GetText(0);
+	p.name = pListElement->GetText(1);
+	p.gender = pListElement->GetText(2);
+	p.birthday = pListElement->GetText(3);
+	p.password = pListElement->GetText(4);
+	p.pos = pListElement->GetText(5);
+	p.tel = pListElement->GetText(6);
+	p.salary = pListElement->GetText(7);
 
+}
+void MainWnd::DeleteInMysql() {
+
+	GetListInfo(text_in_list);
 	std::string sql = "delete from employee where ";
 	sql += "id=";
-	sql += ID;
+	sql += text_in_list.ID;
 	sql += " ";
 	sql += "and name='";
-	sql += name;
+	sql += text_in_list.name;
 	sql += "' ";
 	sql += "and gender='";
-	sql += gender;
+	sql += text_in_list.gender;
 	sql += "' ";
 	sql += "and birthday='";
-	sql += birthday;
+	sql += text_in_list.birthday;
 	sql += "' ";
 	sql += "and password='";
-	sql += password;
+	sql += text_in_list.password;
 	sql += "' ";
 	sql += "and position='";
-	sql += pos;
+	sql += text_in_list.pos;
 	sql += "' ";
 	sql += "and telphone='";
-	sql += tel;
+	sql += text_in_list.tel;
 	sql += "' ";
 	sql += "and salary=";
-	sql += salary;
+	sql += text_in_list.salary;
 	sql += "";
 	sql += ";";
 	Ksql mysql;
 	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
 	mysql.Delete(sql);
-	_sql = "select * from employee;";
+	_sql = "select * from employee order by id;";
 	ShowResult();
 }

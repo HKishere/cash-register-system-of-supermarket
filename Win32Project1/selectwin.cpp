@@ -86,6 +86,7 @@ void SelectWin::Condition_Select() {
 		sql += str_of_salary.GetData();
 		sql += " ";
 	}
+	sql += "order by id";
 	sql += ";";
 	_sql = sql;
 }
