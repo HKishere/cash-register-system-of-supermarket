@@ -36,7 +36,7 @@ bool Ksql::Select(const string& strSQL,DuiLib::CListUI* pList) {
 	//mysql_free_result(MysqlRes);//使用完结果集后需要及时释放结果集
 
 	DuiLib::CDuiString str;
-	int row = MysqlRes->row_count;
+	unsigned __int64 row = MysqlRes->row_count;
 	// 添加List列表内容，必须先Add(pListElement)，再SetText	
 	pList->RemoveAll();
 	while (row) {//获取其中一行结果集	

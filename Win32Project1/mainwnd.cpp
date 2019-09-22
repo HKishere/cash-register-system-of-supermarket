@@ -42,6 +42,7 @@ void MainWnd::Notify(TNotifyUI& msg) {
 		}
 		else if(msg.pSender->GetName()==_T("insert")){
 			InsertWin iw;
+			iw.flag = 1;
 			iw._pList = MainWnd::_pList;
 			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			iw.CenterWindow();
@@ -60,13 +61,23 @@ void MainWnd::Notify(TNotifyUI& msg) {
 				return;
 			}
 			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
-			GetListInfo(text_in_list);
+			GetListInfoOfemployee(text_in_list);
 			UpdateWin uw;
 			uw._pList = MainWnd::_pList;
 			uw.text_in_list = MainWnd::text_in_list;
 			uw.Create(NULL, _T("updatewin"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			uw.CenterWindow();
 			uw.ShowModal();
+		}
+		else if (msg.pSender->GetName() == _T("select_good")) {
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("goodslist")));
+			_sql = "select * from goods order by id;";
+			ShowResult();
+		}
+		else if (msg.pSender->GetName() == _T("insert_good")) {
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("goodslist")));
+			_sql = "select * from goods order by id;";
+			ShowResult();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){
@@ -87,7 +98,7 @@ void MainWnd::ShowResult() {
 	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
 	mysql.Select(_sql.c_str(), _pList);
 }
-void MainWnd::GetListInfo(ContentOfList& p) {
+void MainWnd::GetListInfoOfemployee(ContentOfEmployeeList& p) {
 	CListTextElementUI * pListElement = new CListTextElementUI;
 	int nIndex = _pList->GetCurSel();
 	pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
@@ -104,7 +115,7 @@ void MainWnd::GetListInfo(ContentOfList& p) {
 }
 void MainWnd::DeleteInMysql() {
 
-	GetListInfo(text_in_list);
+	GetListInfoOfemployee(text_in_list);
 	std::string sql = "delete from employee where ";
 	sql += "id=";
 	sql += text_in_list.ID;

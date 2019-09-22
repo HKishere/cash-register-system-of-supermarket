@@ -5,7 +5,7 @@
 class MainWnd :public WindowImplBase {
 protected:
 	std::string _sql;	
-	typedef struct ContentOfList {
+	typedef struct ContentOfEmployeeList {
 		std::string ID;
 		std::string name;
 		std::string gender;
@@ -14,7 +14,17 @@ protected:
 		std::string pos;
 		std::string tel;
 		std::string salary;
-	}ContentOfList;
+	}ContentOfEmployeeList;
+	typedef struct ContentOfGoodList {
+		std::string ID;
+		std::string name;
+		std::string type;
+		std::string Product_date;
+		std::string dead_date;
+		std::string price;
+		std::string uint;
+		std::string in_git;
+	}ContentOfGoodList;
 	DuiLib::CListUI* _pList;
 public:
 	MainWnd::MainWnd();
@@ -24,6 +34,6 @@ public:
 	virtual CDuiString GetSkinFile();
 	virtual LPCTSTR GetWindowClassName(void)const;
 	void MainWnd::ShowResult();
-	void MainWnd::GetListInfo(ContentOfList& p);
-	ContentOfList text_in_list;
+	void MainWnd::GetListInfoOfemployee(ContentOfEmployeeList& p);
+	ContentOfEmployeeList text_in_list;
 };

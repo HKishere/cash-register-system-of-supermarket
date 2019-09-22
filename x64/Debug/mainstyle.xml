@@ -31,7 +31,7 @@
 			<VerticalLayout width="880" height="564" pos="0,0,880,616">
 				<VerticalLayout pos="0,0,880,616" width="880" height="616">
 					<VerticalLayout pos="0,0,880,459" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="459">
-						<List name="goods" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
+						<List name="goodslist" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
 							<ListHeader name="domain" bordercolor="0xFFA0A0A4" border="20202020">
 								<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="编号" width="100" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
 								<ListHeaderItem pos="0,0,100,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品名称" width="120" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
@@ -45,18 +45,18 @@
 						</List>
 					</VerticalLayout>
 					<VerticalLayout pos="0,0,880,68" width="880" height="68">
-						<Button name="select" pos="4,8,129,56" bkimage="button_nromal1.png" width="125" height="48" text="查询全部" float="true" font="4" textcolor="0xFF000000" />
-						<Button name="insert" pos="381,8,506,56" bkimage="button_nromal1.png" width="125" height="48" text="新增" float="true" pushedimage="button_down1.png" />
-						<Button name="delete" pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
-						<Button name="update" pos="753,8,878,56" bkimage="button_nromal1.png" width="125" height="48" text="修改" float="true" pushedimage="button_down1.png" />
-						<Button name="conditionselect" pos="192,8,317,56" bkimage="button_nromal1.png" width="125" height="48" text="筛选" float="true" pushedimage="button_down1.png" />
+						<Button name="select_good" pos="4,8,129,56" bkimage="button_nromal1.png" width="125" height="48" text="查询全部" float="true" font="4" textcolor="0xFF000000" />
+						<Button name="insert_good" pos="381,8,506,56" bkimage="button_nromal1.png" width="125" height="48" text="新增" float="true" pushedimage="button_down1.png" />
+						<Button name="delete_good" pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
+						<Button name="update_good" pos="753,8,878,56" bkimage="button_nromal1.png" width="125" height="48" text="修改" float="true" pushedimage="button_down1.png" />
+						<Button name="conditionselect_good" pos="192,8,317,56" bkimage="button_nromal1.png" width="125" height="48" text="筛选" float="true" pushedimage="button_down1.png" />
 					</VerticalLayout>
 				</VerticalLayout>
 			</VerticalLayout>
 			<VerticalLayout width="880" height="564" pos="0,0,880,616">
 				<VerticalLayout pos="0,0,880,616" width="880" height="616">
 					<VerticalLayout pos="0,0,880,550" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" width="880" height="550">
-						<List name="goodlist" pos="0,0,880,550" width="880" height="550" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
+						<List name="selllist" pos="0,0,880,550" width="880" height="550" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
 							<ListHeader name="domain" bordercolor="0xFFA0A0A4" border="20202020">
 								<ListHeaderItem pos="0,0,140,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品编号" width="140" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
 								<ListHeaderItem pos="0,0,250,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品名称" width="250" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
