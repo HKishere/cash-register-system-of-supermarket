@@ -29,8 +29,6 @@ void GoodWin::Notify(TNotifyUI& msg) {//≤∂ªÒduilibœ˚œ¢
 				MainWnd::ShowResult();
 				ShowWindow(false);
 			}
-			MainWnd::ShowResult();
-			ShowWindow(false);
 		}
 	}
 }
@@ -54,7 +52,7 @@ std::string GoodWin::Update()
 	return std::string();
 }
 
-void GoodWin::GetEdiorInfo(EdiorInfo edior_info)
+void GoodWin::GetEdiorInfo(EdiorInfo& edior_info)
 {
 	CEditUI* ptr_of_ID= (CEditUI*)m_PaintManager.FindControl(_T("ID"));
 	CEditUI* ptr_of_name= (CEditUI*)m_PaintManager.FindControl(_T("name"));
@@ -115,9 +113,9 @@ std::string GoodWin::BuildSQL(std::string& sql, EdiorInfo& ef) {
 		return "";
 	}
 	if (!(ef.str_of_price.IsEmpty())) {
-		sql += "'";
+		sql += "";
 		sql += ef.str_of_price.GetData();
-		sql += "',";
+		sql += ",";
 	}
 	else {
 		return "";
@@ -133,12 +131,12 @@ std::string GoodWin::BuildSQL(std::string& sql, EdiorInfo& ef) {
 	if (!(ef.str_of_in_git.IsEmpty())) {
 		sql += "";
 		sql += ef.str_of_in_git.GetData();
-		sql += ")";
+		sql += ",";
 	}
 	else {
 		return "";
 	}
-	sql += ";";
+	sql += "1);";
 	return sql;
 }
 

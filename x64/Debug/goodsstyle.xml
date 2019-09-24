@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Window size="450,500">
+	<Container pos="0,0,204,206" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\bg_smallwin.png" width="204" height="206">
+		<VerticalLayout pos="0,0,215,98" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\bg_smallwin.png" width="215" height="98">
+			<Edit name="ID" pos="166,54,326,94" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="name" pos="166,100,326,140" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="type" pos="166,146,326,186" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="product_date" pos="166,193,326,233" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="dead_date" pos="166,240,326,280" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="price" pos="166,287,326,327" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Text pos="85,112,163,139" width="78" height="27" text="商品名称:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,67,167,96" width="79" height="29" text="ID:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,159,166,189" width="83" height="30" text="商品类型:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,205,160,233" width="75" height="28" text="生产日期:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,252,159,282" width="74" height="30" text="过期日期:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,298,159,329" width="74" height="31" text="价　　格:" float="true" textcolor="0xFFFFFFFF" />
+			<Edit name="uint" pos="166,334,326,374" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Edit name="in_git" pos="166,381,326,421" bordercolor="0xFFA0A0A4" bordersize="2" width="160" height="40" float="true" />
+			<Text pos="85,345,160,377" width="75" height="32" text="单　　位:" float="true" textcolor="0xFFFFFFFF" />
+			<Text pos="85,391,166,422" width="81" height="31" text="库　　存:" float="true" textcolor="0xFFFFFFFF" />
+			<Button name="ok" pos="124,441,214,481" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\button_nromal1.png" width="90" height="40" text="确定" float="true" textcolor="0xFF000000" />
+			<Button name="cancle" pos="250,441,340,481" bkimage="G:\desktop\githubcode&amp;VS_code\c\Win32Project1\x64\Debug\button_nromal1.png" width="90" height="40" text="取消" float="true" textcolor="0xFF000000" />
+		</VerticalLayout>
+	</Container>
+</Window>

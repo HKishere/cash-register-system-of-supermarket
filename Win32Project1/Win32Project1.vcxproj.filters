@@ -33,13 +33,16 @@
     <ClCompile Include="selectwin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="insertwin.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="updatewin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="testmainwnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Goodwin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="insertwin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,10 +62,13 @@
     <ClInclude Include="selectwin.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="insertwin.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="updatewin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="insertwin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Goodwin.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

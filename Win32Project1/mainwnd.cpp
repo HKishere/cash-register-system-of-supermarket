@@ -1,3 +1,4 @@
+#include "Goodwin.h"
 #include "selectwin.h"
 #include "updatewin.h"
 #include "insertwin.h"
@@ -41,8 +42,8 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			sw.ShowModal();
 		}
 		else if(msg.pSender->GetName()==_T("insert")){
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("employeelist")));
 			InsertWin iw;
-			iw.flag = 1;
 			iw._pList = MainWnd::_pList;
 			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 			iw.CenterWindow();
@@ -74,19 +75,25 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			_sql = "select * from goods order by id;";
 			ShowResult();
 		}
-		else if (msg.pSender->GetName() == _T("insert_good")) {
+		else if(msg.pSender->GetName()==_T("insert_good")){
 			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("goodslist")));
-			_sql = "select * from goods order by id;";
-			ShowResult();
+			GoodWin iw;
+			iw.flag = 1;
+			iw._pList = MainWnd::_pList;
+			iw.Create(NULL, _T("insertwindow"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			iw.CenterWindow();
+			iw.ShowModal();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")){
 		CTabLayoutUI* ptab = (CTabLayoutUI*)m_PaintManager.FindControl(_T("table_layout1"));
 		if (msg.pSender->GetName() == _T("employee")){
 			ptab->SelectItem(0);
+			_sql = "select * from employee order by id;";
 		}
 		else if (msg.pSender->GetName() == _T("goods")) {
 			ptab->SelectItem(1);
+			_sql = "select * from goods order by id;";
 		}
 		else if (msg.pSender->GetName() == _T("money")) {
 			ptab->SelectItem(2);

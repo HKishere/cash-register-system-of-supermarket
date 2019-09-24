@@ -171,6 +171,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Goodwin.cpp" />
     <ClCompile Include="insertwin.cpp" />
     <ClCompile Include="Ksql.cpp" />
     <ClCompile Include="login.cpp" />
@@ -182,6 +183,7 @@
     <ClCompile Include="源1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Goodwin.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="insertwin.h" />
     <ClInclude Include="Ksql.h" />

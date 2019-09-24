@@ -18,7 +18,7 @@ public:
 	std::string InsertIntoMysql();
 	std::string ConditionSelect();
 	std::string Update();
-	void GetEdiorInfo(EdiorInfo edior_info);
+	void GetEdiorInfo(EdiorInfo& edior_info);
 	std::string BuildSQL(std::string& sql, EdiorInfo& ef);
 	int flag;
 private:
