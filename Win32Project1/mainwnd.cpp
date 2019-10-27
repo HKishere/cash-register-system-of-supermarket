@@ -86,16 +86,35 @@ void MainWnd::Notify(TNotifyUI& msg) {
 		}
 		else if (msg.pSender->GetName() == _T("add_good")) {
 			CEditUI* goods_id = (CEditUI*)m_PaintManager.FindControl(_T("good_ID_enter"));
-			CDuiString vlue = goods_id->GetText();
+			string vlue = goods_id->GetText();//need test
 			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("selllist")));
 			Ksql mysql;
 			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
-			mysql.Add_to_cart(_sql.c_str(), _pList);
+			mysql.Add_to_cart(vlue, _pList);
+		}
+		else if (msg.pSender->GetName() == _T("delete_in_cart")) {
+			if (!_pList){
+				MessageBox(m_hWnd, _T("请选择一行数据"), _T("删除失败!"), MB_OK);
+				return;
+			}
+			CListTextElementUI * pListElement = new CListTextElementUI;
+			int nIndex = _pList->GetCurSel();
+			pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+			string ID = pListElement->GetText(0);
+			_pList->Remove(_pList->GetItemAt(_pList->GetCurSel()));
+			Ksql mysql;
+			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
+			string strSQL = "update goods set in_git=in_git+1 where id=";
+			strSQL += ID;
+			strSQL += ";";
+			if (mysql_query(mysql.Get_Mysql(), strSQL.c_str())) {//通过mysql_query函数执行SQL语句
+				return;
+			}
 		}
 	}
-	else if (msg.sType == _T("selectchanged")){
+	else if (msg.sType == _T("selectchanged")) {
 		CTabLayoutUI* ptab = (CTabLayoutUI*)m_PaintManager.FindControl(_T("table_layout1"));
-		if (msg.pSender->GetName() == _T("employee")){
+		if (msg.pSender->GetName() == _T("employee")) {
 			ptab->SelectItem(0);
 			_sql = "select * from employee order by id;";
 		}
@@ -107,6 +126,7 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			ptab->SelectItem(2);
 		}
 	}
+
 }
 void MainWnd::ShowResult() {
 	Ksql mysql;

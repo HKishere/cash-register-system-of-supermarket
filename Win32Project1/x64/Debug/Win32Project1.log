@@ -1,16 +1,5 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Win32Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  源.cpp
-g:\desktop\githubcode&vs_code\c\win32project1\duilib\core\uimanager.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
   mainwnd.cpp
 g:\desktop\githubcode&vs_code\c\win32project1\duilib\core\uimanager.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
-  Ksql.cpp
-g:\desktop\githubcode&vs_code\c\win32project1\duilib\core\uimanager.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“DuiLib::EVENTTYPE_UI”的左侧
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
-  updatewin.cpp
-  selectwin.cpp
-  login.cpp
-  insertwin.cpp
-  Goodwin.cpp
   Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\x64\Debug\ShopSystem.exe
   Win32Project1.vcxproj -> G:\desktop\githubcode&VS_code\c\Win32Project1\x64\Debug\ShopSystem.pdb (Full PDB)

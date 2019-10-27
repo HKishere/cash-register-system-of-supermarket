@@ -5,6 +5,28 @@
 		<Button name="minbtn_main" float="true" pos="1056,0,0,0" width="62" height="40" bkimage="minnest_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="minnest_hover.png" pushedimage="minnest_click.png" />
 		<Option name="employee" float="true" pos="961,218,1145,281" width="184" height="63" bkimage="员工管理_normal.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" group="tab" selectedimage="员工管理_cilck.png" selected="true" />
 		<TabLayout name="table_layout1" float="true" pos="30,144,910,761" width="880" height="617">
+			<VerticalLayout width="880" height="564" pos="0,0,880,616">
+				<VerticalLayout pos="0,0,880,616" width="880" height="616">
+					<VerticalLayout pos="0,0,880,550" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" width="880" height="550">
+						<List name="selllist" pos="0,0,880,550" width="880" height="550" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
+							<ListHeader name="domain" bordercolor="0xFFA0A0A4" border="20202020">
+								<ListHeaderItem pos="0,0,140,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品编号" width="140" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+								<ListHeaderItem pos="0,0,250,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品名称" width="250" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+								<ListHeaderItem pos="0,0,200,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品类型" width="200" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+								<ListHeaderItem pos="0,0,150,0" bordercolor="0xFFA0A0A4" bordersize="1" text="价格" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+								<ListHeaderItem pos="0,0,150,0" bordercolor="0xFFA0A0A4" bordersize="1" text="单位" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
+							</ListHeader>
+						</List>
+					</VerticalLayout>
+					<VerticalLayout pos="0,0,880,91" width="880" height="91">
+						<Edit name="good_ID_enter" pos="103,13,189,51" bordercolor="0xFFA0A0A4" bordersize="2" width="86" height="38" float="true" />
+						<Button name="add_good" pos="201,11,302,53" bkimage="button_nromal1.png" width="101" height="42" text="加入购物车" float="true" />
+						<Button name="sell_goods" pos="764,8,880,50" bkimage="button_nromal1.png" width="116" height="42" text="出售" float="true" />
+						<Button name="delete_in_cart" pos="314,11,453,53" width="139" height="42" text="从购物车删除商品" float="true" normalimage="button_nromal1.png" pushedimage="button_down1.png" />
+						<Label pos="1,14,121,52" width="120" height="38" text="输入商品编号:" float="true" textcolor="0xFFFFFFFF" />
+					</VerticalLayout>
+				</VerticalLayout>
+			</VerticalLayout>
 			<VerticalLayout pos="0,0,880,616" width="880" height="616">
 				<VerticalLayout pos="0,0,880,459" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" bordersize="2" width="880" height="459">
 					<List name="employeelist" width="880" height="500" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
@@ -50,27 +72,6 @@
 						<Button name="delete_good" pos="571,8,696,56" bkimage="button_nromal1.png" width="125" height="48" text="删除" float="true" pushedimage="button_down1.png" />
 						<Button name="update_good" pos="753,8,878,56" bkimage="button_nromal1.png" width="125" height="48" text="修改" float="true" pushedimage="button_down1.png" />
 						<Button name="conditionselect_good" pos="192,8,317,56" bkimage="button_nromal1.png" width="125" height="48" text="筛选" float="true" pushedimage="button_down1.png" />
-					</VerticalLayout>
-				</VerticalLayout>
-			</VerticalLayout>
-			<VerticalLayout width="880" height="564" pos="0,0,880,616">
-				<VerticalLayout pos="0,0,880,616" width="880" height="616">
-					<VerticalLayout pos="0,0,880,550" bkcolor="0xFFFFFBF0" bordercolor="0xFF808080" width="880" height="550">
-						<List name="selllist" pos="0,0,880,550" width="880" height="550" bkcolor="#FFFFFBF0" bordercolor="0xFF808080" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF">
-							<ListHeader name="domain" bordercolor="0xFFA0A0A4" border="20202020">
-								<ListHeaderItem pos="0,0,140,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品编号" width="140" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
-								<ListHeaderItem pos="0,0,250,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品名称" width="250" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
-								<ListHeaderItem pos="0,0,200,0" bordercolor="0xFFA0A0A4" bordersize="1" text="商品类型" width="200" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
-								<ListHeaderItem pos="0,0,150,0" bordercolor="0xFFA0A0A4" bordersize="1" text="价格" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
-								<ListHeaderItem pos="0,0,150,0" bordercolor="0xFFA0A0A4" bordersize="1" text="单位" width="150" textcolor="#FF000000" sepwidth="1" align="center" bkimage="listheader.png" />
-							</ListHeader>
-						</List>
-					</VerticalLayout>
-					<VerticalLayout pos="0,0,880,91" width="880" height="91">
-						<Edit name="good_ID_enter" pos="0,13,182,51" bordercolor="0xFFA0A0A4" bordersize="2" width="182" height="38" float="true" />
-						<Button name="add_good" pos="201,11,321,53" bkimage="button_nromal1.png" width="120" height="42" text="加入购物车" float="true" />
-						<Edit name="amount" pos="566,10,749,48" bordercolor="0xFFA0A0A4" bordersize="2" width="183" height="38" float="true" readonly="true" />
-						<Button name="sell_goods" pos="764,8,880,50" bkimage="button_nromal1.png" width="116" height="42" text="出售" float="true" />
 					</VerticalLayout>
 				</VerticalLayout>
 			</VerticalLayout>

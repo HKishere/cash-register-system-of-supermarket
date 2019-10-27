@@ -99,7 +99,7 @@ bool Ksql::CheckPasswords(CDuiString& username,CDuiString& password) {
 	return true;
 }
 bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
-	string strSQL = "select uint from goods where id=";
+	string strSQL = "select in_git from goods where id=";
 	strSQL += vlue;
 	strSQL += ";";
 	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
@@ -123,7 +123,7 @@ bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
 	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
 		return false;
 	}
-	MYSQL_RES* MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
+	MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
 	if (MysqlRes == nullptr) {
 		return false;
 	}
@@ -142,8 +142,17 @@ bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
 		}
 		row--;
 	}
+	strSQL = "update goods set in_git=in_git-1 where id=";
+	strSQL += vlue;
+	strSQL += ";";
+	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
+		return false;
+	}
 	return true;
 	mysql_free_result(MysqlRes);//使用完结果集后需要及时释放结果集
+}
+MYSQL* Ksql::Get_Mysql() {
+	return _mysql;
 }
 
 Ksql::~Ksql() {
