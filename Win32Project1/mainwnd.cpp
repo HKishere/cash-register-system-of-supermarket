@@ -84,6 +84,14 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			iw.CenterWindow();
 			iw.ShowModal();
 		}
+		else if (msg.pSender->GetName() == _T("add_good")) {
+			CEditUI* goods_id = (CEditUI*)m_PaintManager.FindControl(_T("good_ID_enter"));
+			CDuiString vlue = goods_id->GetText();
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("selllist")));
+			Ksql mysql;
+			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
+			mysql.Add_to_cart(_sql.c_str(), _pList);
+		}
 	}
 	else if (msg.sType == _T("selectchanged")){
 		CTabLayoutUI* ptab = (CTabLayoutUI*)m_PaintManager.FindControl(_T("table_layout1"));

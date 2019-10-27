@@ -67,10 +67,10 @@
 						</List>
 					</VerticalLayout>
 					<VerticalLayout pos="0,0,880,91" width="880" height="91">
-						<Edit name="good_ID_enter" pos="20,13,182,51" bordercolor="0xFFA0A0A4" bordersize="2" width="162" height="38" float="true" />
-						<Button name="add_good" pos="201,11,282,53" bkimage="button_nromal1.png" width="81" height="42" float="true" />
+						<Edit name="good_ID_enter" pos="0,13,182,51" bordercolor="0xFFA0A0A4" bordersize="2" width="182" height="38" float="true" />
+						<Button name="add_good" pos="201,11,321,53" bkimage="button_nromal1.png" width="120" height="42" text="加入购物车" float="true" />
 						<Edit name="amount" pos="566,10,749,48" bordercolor="0xFFA0A0A4" bordersize="2" width="183" height="38" float="true" readonly="true" />
-						<Button name="sell_goods" pos="764,8,848,50" bkimage="button_nromal1.png" width="84" height="42" float="true" />
+						<Button name="sell_goods" pos="764,8,880,50" bkimage="button_nromal1.png" width="116" height="42" text="出售" float="true" />
 					</VerticalLayout>
 				</VerticalLayout>
 			</VerticalLayout>

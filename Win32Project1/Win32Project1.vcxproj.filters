@@ -18,9 +18,6 @@
     <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="mainwnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -36,13 +33,13 @@
     <ClCompile Include="updatewin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="testmainwnd.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Goodwin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="insertwin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testmainwnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

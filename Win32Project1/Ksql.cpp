@@ -17,12 +17,12 @@ bool Ksql::ConnectMySQL(const char* host, const char* user, const char* password
 }
 bool Ksql::Select(const string& strSQL,DuiLib::CListUI* pList) {
 	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
-		cout << mysql_error(_mysql) << endl;
+		//cout << mysql_error(_mysql) << endl;
 		return false;
 	}
 	MYSQL_RES* MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
 	if (MysqlRes == nullptr) {
-		cout << mysql_error((_mysql)) << endl;
+		//cout << mysql_error((_mysql)) << endl;
 		return false;
 	}
 	int itemcount = mysql_num_fields(MysqlRes);//获取结果集中有多少列
@@ -98,8 +98,54 @@ bool Ksql::CheckPasswords(CDuiString& username,CDuiString& password) {
 	}
 	return true;
 }
-
+bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
+	string strSQL = "select uint from goods where id=";
+	strSQL += vlue;
+	strSQL += ";";
+	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
+		return false;
+	}
+	MYSQL_RES* MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
+	if (MysqlRes == nullptr) {
+		return false;
+	}
+	MYSQL_ROW MysqlRow;
+	DuiLib::CDuiString str;
+	MysqlRow = mysql_fetch_row(MysqlRes);
+	str.Format(_T("%s"), MysqlRow[0]);
+	if (atoi(str.GetData()) <= 0) {
+		MessageBox(m_hWnd, _T("该商品库存已空!"), _T("添加到购物车失败!"), MB_OK);
+		return false;
+	}
+	strSQL = "select id,good_name,good_type,price,uint from goods where id=";
+	strSQL += vlue;
+	strSQL += ";";
+	if (mysql_query(_mysql, strSQL.c_str())) {//通过mysql_query函数执行SQL语句
+		return false;
+	}
+	MYSQL_RES* MysqlRes = mysql_store_result(_mysql);//获取查询的结果集
+	if (MysqlRes == nullptr) {
+		return false;
+	}
+	int itemcount = mysql_num_fields(MysqlRes);//获取结果集中有多少列
+	unsigned __int64 row = MysqlRes->row_count;
+	// 添加List列表内容，必须先Add(pListElement)，再SetText	
+	//pList->RemoveAll();
+	while (row) {//获取其中一行结果集	
+		MysqlRow = mysql_fetch_row(MysqlRes);
+		DuiLib::CListTextElementUI* pListElement = new DuiLib::CListTextElementUI;
+		pListElement->SetTag(row);
+		pList->Add(pListElement);
+		for (int i = 0; i < itemcount; i++) {
+			str.Format(_T("%s"), MysqlRow[i]);
+			pListElement->SetText(i, str);
+		}
+		row--;
+	}
+	return true;
+	mysql_free_result(MysqlRes);//使用完结果集后需要及时释放结果集
+}
 
 Ksql::~Ksql() {
 	mysql_close(_mysql);
- }															
+}															
