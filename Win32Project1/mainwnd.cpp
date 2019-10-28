@@ -50,14 +50,14 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			iw.ShowModal();
 		}
 		else if (msg.pSender->GetName() == _T("delete")) {
-			if (!_pList){
+			if (_pList->GetCurSel() == -1){
 				MessageBox(m_hWnd, _T("请选择一行数据"), _T("删除失败!"), MB_OK);
 				return;
 			}
 			DeleteInMysql();
 		}
 		else if (msg.pSender->GetName() == _T("update")) {
-			if (!_pList){
+			if (_pList->GetCurSel() == -1){
 				MessageBox(m_hWnd, _T("请选择一行数据"), _T("更改失败!"), MB_OK);
 				return;
 			}
@@ -93,8 +93,8 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			mysql.Add_to_cart(vlue, _pList);
 		}
 		else if (msg.pSender->GetName() == _T("delete_in_cart")) {
-			if (!_pList){
-				MessageBox(m_hWnd, _T("请选择一行数据"), _T("删除失败!"), MB_OK);
+			if (_pList->GetCurSel() == -1){
+				MessageBox(m_hWnd, _T("请选择一件商品!"), _T("删除失败!"), MB_OK);
 				return;
 			}
 			CListTextElementUI * pListElement = new CListTextElementUI;
