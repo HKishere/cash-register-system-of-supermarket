@@ -17,7 +17,7 @@ public:
 	bool Insert(const string& strSQL);
 	bool Delete(const string& strSQL);
 	bool Updata(const string& strSQL);
-	bool Add_to_cart(const string& strSQL, DuiLib::CListUI* pList);
+	bool Add_to_cart(const string& strSQL, DuiLib::CListUI* pList, DuiLib::CEditUI* ptr_of_sum);
 	MYSQL* Get_Mysql();
 	bool CheckPasswords(CDuiString& username, CDuiString& password);
 private:

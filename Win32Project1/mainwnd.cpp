@@ -84,13 +84,46 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			iw.CenterWindow();
 			iw.ShowModal();
 		}
+		else if (msg.pSender->GetName() == _T("conditionselect_good")) {
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("goodslist")));
+			GoodWin iw;
+			iw.flag = 2;
+			iw._pList = MainWnd::_pList;
+			iw.Create(NULL, _T("condition_select"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			iw.CenterWindow();
+			iw.ShowModal();
+		}
+		else if (msg.pSender->GetName() == _T("delete_good")) {
+			if (_pList->GetCurSel() == -1){
+				MessageBox(m_hWnd, _T("请选择一行数据"), _T("删除失败!"), MB_OK);
+				return;
+			}
+			MainWnd::DeleteInMysql_goods();
+			ShowResult();
+		}
+		else if (msg.pSender->GetName() == _T("update_good")) {
+			if (_pList->GetCurSel() == -1){
+				MessageBox(m_hWnd, _T("请选择一行数据"), _T("更改失败!"), MB_OK);
+				return;
+			}
+			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("goodslist")));
+			GetListInfoOfGood(text_in_good_list);
+			GoodWin iw;
+			iw.flag = 3;
+			iw._pList = MainWnd::_pList;
+			iw.text_in_good_list = MainWnd::text_in_good_list;
+			iw.Create(NULL, _T("condition_select"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+			iw.CenterWindow();
+			iw.ShowModal();
+		}
 		else if (msg.pSender->GetName() == _T("add_good")) {
 			CEditUI* goods_id = (CEditUI*)m_PaintManager.FindControl(_T("good_ID_enter"));
 			string vlue = goods_id->GetText();//need test
 			_pList = static_cast<DuiLib::CListUI*>(m_PaintManager.FindControl(_T("selllist")));
 			Ksql mysql;
 			mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
-			mysql.Add_to_cart(vlue, _pList);
+			CEditUI* ptr_of_sum = (CEditUI*)m_PaintManager.FindControl(_T("sum"));
+			mysql.Add_to_cart(vlue, _pList, ptr_of_sum);
 		}
 		else if (msg.pSender->GetName() == _T("delete_in_cart")) {
 			if (_pList->GetCurSel() == -1){
@@ -149,6 +182,36 @@ void MainWnd::GetListInfoOfemployee(ContentOfEmployeeList& p) {
 	p.tel = pListElement->GetText(6);
 	p.salary = pListElement->GetText(7);
 
+}
+void MainWnd::GetListInfoOfGood(ContentOfGoodList& p) {
+	CListTextElementUI * pListElement = new CListTextElementUI;
+	int nIndex = _pList->GetCurSel();
+	pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+
+	p.ID = pListElement->GetText(0);
+	p.name = pListElement->GetText(1);
+	p.type = pListElement->GetText(2);
+	p.Product_date = pListElement->GetText(3);
+	p.dead_date = pListElement->GetText(4);
+	p.price = pListElement->GetText(5);
+	p.uint = pListElement->GetText(6);
+	p.in_git = pListElement->GetText(7);
+}
+void MainWnd::DeleteInMysql_goods() {
+	std::string sql = "delete from goods where ";
+	Ksql mysql;
+	CListTextElementUI * pListElement = new CListTextElementUI;
+	int nIndex = _pList->GetCurSel();
+	pListElement = (CListTextElementUI*)_pList->GetItemAt(nIndex);
+	sql += "id=";
+	sql += pListElement->GetText(0);
+	sql += " ";
+	sql += "and good_name='";
+	sql += pListElement->GetText(1);
+	sql += "';";
+	mysql.ConnectMySQL("localhost", "root", "kishere", "shop");
+	mysql.Delete(sql);
+	_sql = "select * from goods order by id;";
 }
 void MainWnd::DeleteInMysql() {
 

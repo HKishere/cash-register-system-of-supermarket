@@ -17,6 +17,7 @@ public:
 	virtual void    Notify(TNotifyUI& msg);//≤∂ªÒduilibœ˚œ¢
 	std::string InsertIntoMysql();
 	std::string ConditionSelect();
+	void ShowInfo();
 	std::string Update();
 	void GetEdiorInfo(EdiorInfo& edior_info);
 	std::string BuildSQL(std::string& sql, EdiorInfo& ef);

@@ -35,5 +35,8 @@ public:
 	virtual LPCTSTR GetWindowClassName(void)const;
 	void MainWnd::ShowResult();
 	void MainWnd::GetListInfoOfemployee(ContentOfEmployeeList& p);
+	void MainWnd::GetListInfoOfGood(ContentOfGoodList& text_in_good_list);
+	void DeleteInMysql_goods();
 	ContentOfEmployeeList text_in_list;
+	ContentOfGoodList text_in_good_list;
 };

@@ -1,5 +1,7 @@
 ﻿#include "Ksql.h"
-#include <string.h>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
 #include <iostream>
 using namespace std;
 
@@ -41,7 +43,7 @@ bool Ksql::Select(const string& strSQL,DuiLib::CListUI* pList) {
 	pList->RemoveAll();
 	while (row) {//获取其中一行结果集	
 		MysqlRow = mysql_fetch_row(MysqlRes);
-		DuiLib::CListTextElementUI* pListElement = new  DuiLib::CListTextElementUI;
+		DuiLib::CListTextElementUI* pListElement = new DuiLib::CListTextElementUI;
 		pListElement->SetTag(row);
 		pList->Add(pListElement);
 		for (int i = 0; i < itemcount; i++) {
@@ -98,7 +100,7 @@ bool Ksql::CheckPasswords(CDuiString& username,CDuiString& password) {
 	}
 	return true;
 }
-bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
+bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList, DuiLib::CEditUI* ptr_of_sum) {
 	string strSQL = "select in_git from goods where id=";
 	strSQL += vlue;
 	strSQL += ";";
@@ -139,10 +141,12 @@ bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
 		for (int i = 0; i < itemcount; i++) {
 			str.Format(_T("%s"), MysqlRow[i]);
 			pListElement->SetText(i, str);
-			if (i = itemcount - 1) {
-				
-				CEditUI* ptr_of_sum = (CEditUI*)m_PaintManager.FindControl(_T("sum"));
-				ptr_of_sum->SetText();
+			if (i == itemcount - 2) {
+				int sum = atoi(ptr_of_sum->GetText());
+				sum += atoi(str);
+				char buf[100];
+				_itoa_s(sum,buf,64,10);
+				ptr_of_sum->SetText(buf);
 			}
 		}
 		row--;

@@ -24,7 +24,7 @@
 						<Button name="sell_goods" pos="764,8,880,50" bkimage="button_nromal1.png" width="116" height="42" text="出售" float="true" />
 						<Button name="delete_in_cart" pos="314,11,453,53" width="139" height="42" text="从购物车删除商品" float="true" normalimage="button_nromal1.png" pushedimage="button_down1.png" />
 						<Label pos="1,14,121,52" width="120" height="38" text="输入商品编号:" float="true" textcolor="0xFFFFFFFF" />
-						<Edit name="sum" pos="643,11,755,48" bordercolor="0xFFC0C0C0" bordersize="2" width="112" height="37" text="0.00" mouse="false" float="true" font="25" textcolor="0xFF000000" keyboard="false" />
+						<Edit name="sum" pos="643,11,755,48" bordercolor="0xFFC0C0C0" bordersize="2" width="112" height="37" text="0" mouse="false" float="true" font="25" textcolor="0xFF000000" keyboard="false" />
 						<Label pos="601,15,642,44" width="41" height="29" text="合计:" float="true" textcolor="0xFFFFFFFF" />
 					</VerticalLayout>
 				</VerticalLayout>

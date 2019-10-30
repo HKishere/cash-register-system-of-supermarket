@@ -47,7 +47,7 @@ void SelectWin::Condition_Select() {
 
 	string sql = "select * from employee where id is not null ";
 	if (!(str_of_ID.IsEmpty())){
-		sql += "id=";
+		sql += "and id=";
 		sql += str_of_ID.GetData();
 		sql += " ";
 	}
