@@ -111,6 +111,8 @@ void MainWnd::Notify(TNotifyUI& msg) {
 				return;
 			}
 		}
+		else if (msg.pSender->GetName() == _T("sell_goods")) {
+		}
 	}
 	else if (msg.sType == _T("selectchanged")) {
 		CTabLayoutUI* ptab = (CTabLayoutUI*)m_PaintManager.FindControl(_T("table_layout1"));

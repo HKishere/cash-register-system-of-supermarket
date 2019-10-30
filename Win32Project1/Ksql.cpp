@@ -139,6 +139,11 @@ bool Ksql::Add_to_cart(const string& vlue,DuiLib::CListUI* pList) {
 		for (int i = 0; i < itemcount; i++) {
 			str.Format(_T("%s"), MysqlRow[i]);
 			pListElement->SetText(i, str);
+			if (i = itemcount - 1) {
+				
+				CEditUI* ptr_of_sum = (CEditUI*)m_PaintManager.FindControl(_T("sum"));
+				ptr_of_sum->SetText();
+			}
 		}
 		row--;
 	}
