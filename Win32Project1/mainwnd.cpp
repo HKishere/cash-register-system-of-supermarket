@@ -143,8 +143,16 @@ void MainWnd::Notify(TNotifyUI& msg) {
 			if (mysql_query(mysql.Get_Mysql(), strSQL.c_str())) {//通过mysql_query函数执行SQL语句
 				return;
 			}
+			CEditUI* ptr_of_sum = (CEditUI*)m_PaintManager.FindControl(_T("sum"));
+			int sum = atoi(ptr_of_sum->GetText());
+			string price = pListElement->GetText(3);
+			sum -= atoi(price.c_str());
+			char buf[100];
+			_itoa_s(sum, buf, 64, 10);
+			ptr_of_sum->SetText(buf);
 		}
 		else if (msg.pSender->GetName() == _T("sell_goods")) {
+			_pList->RemoveAll();
 		}
 	}
 	else if (msg.sType == _T("selectchanged")) {
